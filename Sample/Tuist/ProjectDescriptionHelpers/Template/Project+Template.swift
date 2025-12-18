@@ -37,7 +37,8 @@ extension Project {
                 hasTesting: true,
                 hasExample: true,
                 hasInterface: true,
-                dependencies: dependencies
+                dependencies: dependencies,
+                interfaceDependencies: interfaceDependencies
             )
 
         case let .domain(name):
@@ -49,7 +50,8 @@ extension Project {
                 hasTests: true,
                 hasTesting: hasTesting,
                 hasInterface: true,
-                dependencies: dependencies
+                dependencies: dependencies,
+                interfaceDependencies: interfaceDependencies
             )
             
         case let .general(name):
@@ -62,7 +64,8 @@ extension Project {
                 hasTesting: hasTesting,
                 hasExample: hasExample,
                 hasInterface: hasInterface,
-                dependencies: dependencies
+                dependencies: dependencies,
+                interfaceDependencies: interfaceDependencies
             )
         }
     }

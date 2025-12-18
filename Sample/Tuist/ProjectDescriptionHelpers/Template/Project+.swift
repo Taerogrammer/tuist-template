@@ -51,29 +51,36 @@ extension Project {
         hasTesting: Bool = false,
         hasExample: Bool = false,
         hasInterface: Bool = false,
-        dependencies: [TargetDependency]
+        dependencies: [TargetDependency],
+        interfaceDependencies: [TargetDependency] = []
     ) -> Self {
         var targets: [Target] = []
         var schemes: [Scheme] = [Scheme.configureScheme(
             schemeName: name
         )]
-        
+
         if hasInterface {
             let interfaceTarget = createInterfaceTarget(
                 name: name,
                 configuration: configuration,
                 product: product,
-                dependencies: dependencies
+                dependencies: interfaceDependencies
             )
             targets.append(interfaceTarget)
         }
-        
+
+        // 구현체 의존성: Interface + dependencies
+        var implementationDependencies = dependencies
+        if hasInterface {
+            implementationDependencies.insert(.target(name: "\(name)Interface"), at: 0)
+        }
+
         let frameworkTarget = createFrameworkTarget(
             name: name,
             configuration: configuration,
             hasResources: hasResources,
             product: product,
-            dependencies: hasInterface ? [.target(name: "\(name)Interface")] : dependencies
+            dependencies: implementationDependencies
         )
         targets.append(frameworkTarget)
         
