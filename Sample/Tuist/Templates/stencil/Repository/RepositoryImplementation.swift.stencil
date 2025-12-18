@@ -1,0 +1,11 @@
+import Combine
+
+// TODO: Repository Interface 구현
+public final class Default{{ name }}Repository: {{ name }}Repository {
+    public init() {}
+    
+    public func fetchItems() -> AnyPublisher<Void, Error> {
+        // TODO: Implement actual data fetching
+        return Empty().eraseToAnyPublisher()
+    }
+}
