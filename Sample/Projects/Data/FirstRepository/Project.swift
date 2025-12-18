@@ -2,7 +2,7 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.configure(
-    moduleType: .general(name: "FirstRepository"),
+    moduleType: .data(name: "FirstRepository"),
     product: .staticFramework,
     dependencies: [
         .Domain.First.interface,

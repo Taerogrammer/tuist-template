@@ -8,8 +8,6 @@
 import ProjectDescription
 
 // MARK: - DataSource
-// 프로젝트 단위의 의존성
-// Q. 굳이 이름을 프로젝트?로 해야 하나? 지금은 Data Layer랑 Core가 함께 혼재되어 있어서 그런거 같긴한데, 이것을 분리하고 이름을 명확하게 지정하는 것이 가시성이 좋지 않을까?
 public extension TargetDependency.Module {
     static let localDataSource = LocalDataSource.self
     static let remoteDataSource = RemoteDataSource.self
@@ -43,21 +41,6 @@ public extension TargetDependency.Module {
     static let data = dependency(
         target: "Data",
         path: .relativeData()
-    )
-
-    static let repository = dependency(
-        target: "Repository",
-        path: .relativeRepository()
-    )
-
-    static let sampleRepository = dependency(
-        target: "SampleRepository",
-        path: .relativeSampleRepository()
-    )
-
-    static let firstRepository = dependency(
-        target: "FirstRepository",
-        path: .relativeFirstRepository()
     )
 
     static let persistence = dependency(

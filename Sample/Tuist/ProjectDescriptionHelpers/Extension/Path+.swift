@@ -23,7 +23,11 @@ public extension ProjectDescription.Path {
     static func relativeToCore(path: String) -> Self {
         return .relativeToRoot("Projects/CoreKit/\(path)")
     }
-    
+
+    static func relativeToData(path: String) -> Self {
+        return .relativeToRoot("Projects/Data/\(path)")
+    }
+
     static func relativeData() -> Self {
         return .relativeToRoot("Projects/Data/Data")
     }

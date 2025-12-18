@@ -53,7 +53,18 @@ extension Project {
                 dependencies: dependencies,
                 interfaceDependencies: interfaceDependencies
             )
-            
+
+        case let .data(name):
+            return configureModule(
+                configuration: configuration,
+                name: name,
+                product: product,
+                hasTests: true,
+                hasInterface: true,
+                dependencies: dependencies,
+                interfaceDependencies: interfaceDependencies
+            )
+
         case let .general(name):
             return configureModule(
                 configuration: configuration,
