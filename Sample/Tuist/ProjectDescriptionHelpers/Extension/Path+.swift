@@ -36,6 +36,14 @@ public extension ProjectDescription.Path {
         return .relativeToRoot("Projects/Data/Repository")
     }
 
+    static func relativeSampleRepository() -> Self {
+        return .relativeToRoot("Projects/Data/SampleRepository")
+    }
+
+    static func relativeFirstRepository() -> Self {
+        return .relativeToRoot("Projects/Data/FirstRepository")
+    }
+
     static func relativeLocalDataSource() -> Self {
         return .relativeToRoot("Projects/Data/LocalDataSource")
     }

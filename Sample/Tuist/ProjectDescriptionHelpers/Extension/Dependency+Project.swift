@@ -50,6 +50,16 @@ public extension TargetDependency.Module {
         path: .relativeRepository()
     )
 
+    static let sampleRepository = dependency(
+        target: "SampleRepository",
+        path: .relativeSampleRepository()
+    )
+
+    static let firstRepository = dependency(
+        target: "FirstRepository",
+        path: .relativeFirstRepository()
+    )
+
     static let persistence = dependency(
         target: "Persistence",
         path: .relativePersistence()

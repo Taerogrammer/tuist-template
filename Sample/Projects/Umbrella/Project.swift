@@ -13,6 +13,7 @@ let project = Project.configure(
     product: .framework,
     dependencies: [
         .Feature.Root.feature,
+        .Domain.implement,
         .Module.data
     ],
     hasTests: false

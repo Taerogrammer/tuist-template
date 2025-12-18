@@ -12,6 +12,6 @@ let project = Project.configure(
     moduleType: .general(name: "Networker"),
     product: .staticFramework,
     dependencies: [
-        .Domain.implement
+        // 순수 인프라 레이어 - Domain 의존 없음
     ]
 )

@@ -13,6 +13,6 @@ let project = Project.configure(
     product: .staticFramework,
     dependencies: [
 //        .Library.alamofire,
-        .Domain.implement
+        // 순수 인프라 레이어 - Domain 의존 없음
     ]
 )

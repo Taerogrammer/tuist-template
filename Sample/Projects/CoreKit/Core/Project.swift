@@ -13,6 +13,5 @@ let project = Project.configure(
     product: .staticFramework,
     dependencies: [
         .Core.designKit,
-        .Domain.implement,
     ]
 )

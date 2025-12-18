@@ -13,6 +13,8 @@ let project = Project.configure(
     moduleType: .feature(name: "{{ name }}Feature"),
     product: .staticFramework,
     dependencies: [
+    ],
+    interfaceDependencies: [
         .Core.core
     ]
 )

@@ -12,7 +12,8 @@ let project = Project.configure(
     moduleType: .general(name: "Data"),
     product: .staticFramework,
     dependencies: [
-        .Module.repository,
+        .Module.sampleRepository,
+        .Module.firstRepository,
         .Module.localDataSource.implement,
         .Module.remoteDataSource.implement
     ]
